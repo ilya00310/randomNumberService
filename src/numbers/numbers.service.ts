@@ -15,12 +15,12 @@ export class NumbersService {
       });
   }
 
-  async retrieve(id: number): Promise<number> {
+  async retrieve(id: number): Promise<number|null> {
     const currentNumber = await this.prismaService.numbers.findUnique({
       where: { id },
     });
     if (!currentNumber) {
-      throw new NotFoundException("Number not found");
+      return null
     }
     return currentNumber.number;
   }
