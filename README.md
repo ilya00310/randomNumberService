@@ -9,4 +9,5 @@ npm install
 docker-compose up
 ```
 Производить соответсвующие запросы через postman или curl
+
 Адрес swagger: api/docs
