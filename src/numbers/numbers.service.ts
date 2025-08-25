@@ -20,7 +20,7 @@ export class NumbersService {
       where: { id },
     });
     if (!currentNumber) {
-      return null
+      throw new NotFoundException('Number not found')
     }
     return currentNumber.number;
   }
