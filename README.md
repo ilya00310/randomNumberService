@@ -3,9 +3,8 @@
 
 Прописать свой .env файл на основе .env.example
 
-Установить зависимости, запуcтить docker-compose:
+Запуcтить docker-compose:
 ```
-npm install
 docker-compose up
 ```
 Производить соответсвующие запросы через postman или curl
