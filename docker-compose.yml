@@ -33,5 +33,15 @@ services:
       -  postgres
     restart: always
 
+  nginx:
+    build:
+      context: ./volumes/build/nginx
+    container_name: nginx
+    ports:
+      - 80:80
+    restart: unless-stopped      
+    depends_on:
+      - main
+      
 volumes:
   pgdata:

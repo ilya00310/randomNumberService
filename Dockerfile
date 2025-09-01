@@ -3,7 +3,7 @@ FROM node
 WORKDIR /app
 
 COPY package*.json ./
-COPY prisma ./prisma/
+COPY ./prisma ./prisma/
 
 RUN npm install 
 
