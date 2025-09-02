@@ -22,8 +22,6 @@ services:
       context: .
     env_file:
       - .env
-    ports:
-      -  3000:3000
     command: >
       sh -c "
       npx prisma migrate dev &&
@@ -34,12 +32,13 @@ services:
     restart: always
 
   nginx:
-    build:
-      context: ./volumes/build/nginx
+    image: ilyashikman/nginx:latest
     container_name: nginx
     ports:
       - 80:80
-    restart: unless-stopped      
+    restart: unless-stopped
+    volumes:
+      - ./volumes/build/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - main
       
